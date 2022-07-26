@@ -1,7 +1,20 @@
 // import './App.css';
 // import logo from './logo.svg';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import VanillaTilt from "vanilla-tilt";
+
+function Tilt(props) {
+  const { options, ...rest } = props;
+  const tilt = useRef(null);
+
+  useEffect(() => {
+    VanillaTilt.init(tilt.current, options);
+  }, [options]);
+
+  return <div ref={tilt} {...rest} />;
+}
+
 function Main() {
   const [datas, setDatas] = useState([]);
 
@@ -14,8 +27,15 @@ function Main() {
   }
 
   
+  const options = {
+    scale: 1.1,
+    speed: 1000,
+    max: 30,
+  };
+  
   useEffect(() => {
-    getAllBlueEyesArc();  
+    getAllBlueEyesArc();
+   
   }, [])
   
 
@@ -30,7 +50,8 @@ function Main() {
                   <div className='cards'>
                     <Link to={`/details/${data.id}`}>
                       <div className="container-img" style={{backgroundColor : `#e9e9e9`}}>
-                          <img alt={data.name} src={subdataimg.image_url_small}/>
+                      <Tilt className="box" style={{backgroundImage : `url('${subdataimg.image_url}')`}} options={options} />
+                          {/* <img alt={data.name} src={subdataimg.image_url_small}/> */}
                       </div>
                     </Link>
                       <div className='rows'>
