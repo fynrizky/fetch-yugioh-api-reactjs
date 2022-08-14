@@ -1,20 +1,18 @@
 import './App.css';
 // import logo from './logo.svg';
 // import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Main from "./components/Main";
-import Details from "./components/Details";
+import { BrowserRouter as BRouter } from "react-router-dom";
+import Navbar from './components/Navbar';
+import Router from './components/router/Router';
 function App() {
   
   return (
     <div className="App">
-      <Router>        
-        <Routes>
-            <Route exact path="/" element={<Main />}/>
-            <Route exact path="/details/:id" element={<Details />}/>
-        </Routes>
-      </Router>
-    </div>
+      <BRouter>     
+        <Navbar/>
+        <Router/>
+      </BRouter>
+    </div>   
   );
 }
 

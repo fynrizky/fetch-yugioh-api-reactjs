@@ -1,4 +1,47 @@
 img{
-    margin: 30px;
-    width: 400px;
+    width: 350px;
+    position: fixed;
+    top : 100px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+    transform: translateX(-150%);
+    transition: all 1s;
+}
+.container-detail{
+    display: block;
+    position: fixed;
+    background-color: white;
+    width: 50%;
+    height: 80%;
+    margin: auto 40%;
+    top: 100px;
+    padding: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+    border-style: solid;
+    
+}
+.row-detail{
+    position: fixed;
+    background-color: white;
+    width: 46.5%;
+    height: 72.5%;
+    border-style: double;
+}
+.row-detail p{
+    text-align: justify;
+    padding: 10px;
+    margin-top: -20px;
+}
+.row-detail h4{
+    padding: 10px;
+    position: fixed;
+}
+.row-detail h4.drace{
+    position: relative;
+    margin-left: 80%;
+}
+.row-detail h4.dname{
+    margin: auto;
+    position: relative;
+    border-bottom: 3px solid rgb(0, 0, 0);
+    padding: 20px;
 }

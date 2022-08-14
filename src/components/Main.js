@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import VanillaTilt from "vanilla-tilt";
+import './main.css';
 
 function Tilt(props) {
   const { options, ...rest } = props;
@@ -45,7 +46,7 @@ function Main() {
           return ( 
           data.card_images.map((subdataimg)=>{
             return (
-              <div className='container'>
+              <div className='container-card'>
                 <div className="col">
                   <div className='cards'>
                     <Link to={`/details/${data.id}`}>
